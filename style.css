@@ -110,7 +110,7 @@ ul { list-style: none; }
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -388,7 +388,7 @@ h2 {
 /* Projects Grid */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -581,12 +581,32 @@ footer .socials a:hover {
         backdrop-filter: var(--glass-blur);
         -webkit-backdrop-filter: var(--glass-blur);
         border: var(--glass-border);
+        border-top: none;
     }
     
     .nav-links.active { display: flex; }
     .hamburger { display: block; }
-    .hero h1 { font-size: 2rem; }
     .contact-section .title { font-size: 2.5rem; }
+
+    /* Stack grids on mobile */
+    .project-grid, .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .terminal-window {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.8rem; }
+    h2 { font-size: 2rem; }
+    .btn { width: 100%; text-align: center; }
 }
 
 /* Typing Animation Cursor */
@@ -691,7 +711,7 @@ footer .socials a:hover {
 
 .terminal-window {
     flex: 1;
-    min-width: 300px;
+    min-width: 280px;
     border-radius: 8px;
     font-family: 'Fira Code', 'Courier New', monospace;
     background: var(--glass-bg);
@@ -760,7 +780,7 @@ footer .socials a:hover {
 
 .about-text {
     flex: 0 0 100%;
-    text-align: center;
+    text-align: left;
     margin-top: 1rem;
 }
 

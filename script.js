@@ -202,9 +202,6 @@ if (canvas) {
     });
 
     window.addEventListener('click', (e) => {
-        // Prevent explosion when clicking interactive elements like buttons, links, or the modal
-        if (e.target.closest('a, button, input, textarea, .modal-content')) return;
-
         for (let i = 0; i < 20; i++) {
             explosionParticles.push(new ExplosionParticle(e.clientX, e.clientY));
         }
